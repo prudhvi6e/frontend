@@ -4,8 +4,9 @@
   "version": "0.0.0",
   "type": "module",
   "scripts": {
-    "dev": "vite",
+    "dev": "vite --host",
     "bun-dev": "bunx --bun vite",
+    "start-api": "cd api && flask run --no-debugger",
     "build": "bunx --bun vite build",
     "lint": "eslint . --ext js,jsx --report-unused-disable-directives --max-warnings 0",
     "preview": "vite preview",
@@ -32,8 +33,10 @@
     "react-scripts": "^5.0.1",
     "sass": "^1.70.0",
     "vite-plugin-sass": "^0.1.0",
+    "workbox-google-analytics": "^6.6.0",
     "yup": "^1.3.3"
   },
+
   "devDependencies": {
     "@types/react": "^18.2.15",
     "@types/react-dom": "^18.2.7",
@@ -44,6 +47,9 @@
     "eslint-plugin-react-refresh": "^0.4.3",
     "vite": "^4.4.5"
   },
+  "overrides": {
+  "react-refresh": "0.11.0"
+},
   "browserslist": {
     "production": [
       ">0.2%",
@@ -54,6 +60,7 @@
       "last 1 chrome version",
       "last 1 firefox version",
       "last 1 safari version"
-    ]
-  }
+    ]  
+  },
+  "proxy":"http://DHKY-Dev-Webapp-ALB-1994473636.ap-south-1.elb.amazonaws.com/recommendation"
 }
